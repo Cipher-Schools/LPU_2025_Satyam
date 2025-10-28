@@ -6,12 +6,23 @@ struct Node {
     Node* next;
 };
 
+// traversal function
 void ll_traversal(Node* head){
     while(head!=nullptr){
         cout<<head->data<<" ";
         head=head->next;
     }
+
 }
+
+// function to insert a new node at beginning
+Node* insertAtBeginning(Node* head, int val) {
+    Node* newNode = new Node();
+    newNode->data = val;
+    newNode->next = head;
+    return newNode; // new head
+}
+
 
 int main() {
     Node* head = new Node();
@@ -26,7 +37,11 @@ int main() {
 
     third->data = 30;
     third->next = nullptr;
-    // traversal of ll
+    cout<<"before insertion"<<endl;
     ll_traversal(head);
+    cout<<"after insertion"<<endl;
+    head=insertAtBeginning(head,-10);
+    ll_traversal(head);
+    
     
 }
