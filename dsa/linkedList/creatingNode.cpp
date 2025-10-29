@@ -6,27 +6,23 @@ struct Node {
     Node* next;
 };
 
-void ll_traversal(Node* head){
-    while(head!=nullptr){
-        cout<<head->data<<" ";
-        head=head->next;
-    }
-}
+
 
 int main() {
-    Node* head = new Node();
-    Node* second = new Node();
-    Node* third = new Node();
+    //creating node statically
+    Node newNode;
+    newNode.data=20;
+    newNode.next=nullptr;
+    // accessing the data of node
+    cout<<newNode.data<<endl;
 
-    head->data = 10;
-    head->next = second;
+    // creating node dynamically
+    Node* node= new Node;
+    node->data=10;
+    node->next=nullptr;
+    // accessing the data of the node
+    cout<<node->data;
+    return 0;
 
-    second->data = 20;
-    second->next = third;
-
-    third->data = 30;
-    third->next = nullptr;
-    // traversal of ll
-    ll_traversal(head);
     
 }

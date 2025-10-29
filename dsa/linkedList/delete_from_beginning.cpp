@@ -12,13 +12,23 @@ void ll_traversal(Node* head){
         cout<<head->data<<" ";
         head=head->next;
     }
+
+}
+
+// function to insert a new node at beginning
+Node* delete_from_beginning(Node* head) {
+    Node* temp=head->next;
+    head->next=NULL;
+    delete head;
+    return temp;
+    
 }
 
 
 int main() {
-    Node* head = new Node;
-    Node* second = new Node;
-    Node* third = new Node;
+    Node* head = new Node();
+    Node* second = new Node();
+    Node* third = new Node();
 
     head->data = 10;
     head->next = second;
@@ -28,11 +38,11 @@ int main() {
 
     third->data = 30;
     third->next = nullptr;
-
-    // traversal
+    cout<<"before insertion"<<endl;
     ll_traversal(head);
-
-    return 0;
+    cout<<"after deletion"<<endl;
+    head=delete_from_beginning(head);
+    ll_traversal(head);
     
     
 }
