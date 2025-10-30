@@ -31,7 +31,7 @@ int main() {
     second->next = third;
 
     third->data = 30;
-    third->next = second;
+    third->next = nullptr;
 
     if(isCycle(head)) cout<<"yes cycle is present"<<endl;
     else cout<<"cycle is not present";

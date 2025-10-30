@@ -22,7 +22,7 @@ Node* insertAtEndWithHead(Node* head, int val) {
     newNode->next = nullptr;
 
     if(head == nullptr) return newNode;
-
+    // calculation of tail
     Node* temp = head;
     while(temp->next != nullptr)
         temp = temp->next;
@@ -35,6 +35,7 @@ pair<Node*, Node*> insertAtEndWithHeadAndTail(Node* head, Node* tail, int val) {
     Node* newNode = new Node();
     newNode->data = val;
     newNode->next = nullptr;
+    if(head==NULL) return {newNode, newNode};
     tail->next= newNode;
     tail=newNode;
     return {head, tail};
@@ -55,7 +56,7 @@ int main() {
 
     tail->data = 30;
     tail->next = nullptr;
-    
+
     cout<<"before insertion"<<endl;
     ll_traversal(head);
     cout<<endl;
@@ -65,11 +66,11 @@ int main() {
     ll_traversal(head);
     cout<<endl;
 
-    cout<<"after insertion using head and tail"<<endl;
-    auto headAndTail= insertAtEndWithHeadAndTail(head, tail, -20);
-    head=headAndTail.first;
-    tail=headAndTail.second;
-    ll_traversal(head);
+    // cout<<"after insertion using head and tail"<<endl;
+    // auto headAndTail= insertAtEndWithHeadAndTail(head, tail, -20);
+    // head=headAndTail.first;
+    // tail=headAndTail.second;
+    // ll_traversal(head);
 
     return 0;
     

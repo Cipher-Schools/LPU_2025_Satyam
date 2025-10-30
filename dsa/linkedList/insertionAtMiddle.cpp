@@ -14,9 +14,8 @@ void ll_traversal(Node* head){
     }
 
 }
-
 // function to insert a new node at beginning
-void insertAtMiddle(Node* head, Node* target, int value) {
+void insertAtMiddle(Node* target, int value) {
     Node * newNode= new Node;
     newNode->data=value;
     newNode->next=target->next;
@@ -39,7 +38,7 @@ int main() {
     third->next = nullptr;
     cout<<"before insertion"<<endl;
     ll_traversal(head);
-    insertAtMiddle(head, head, 0);
+    insertAtMiddle(second, 0);
     cout<<"after insertion"<<endl;
     ll_traversal(head);
     
