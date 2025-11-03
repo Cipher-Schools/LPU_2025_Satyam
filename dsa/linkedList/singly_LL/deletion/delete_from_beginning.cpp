@@ -43,6 +43,9 @@ int main() {
     cout<<"after deletion"<<endl;
     head=delete_from_beginning(head);
     ll_traversal(head);
+
+
+    
     
     
 }

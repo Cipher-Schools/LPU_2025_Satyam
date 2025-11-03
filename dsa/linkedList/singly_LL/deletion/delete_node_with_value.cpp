@@ -40,7 +40,7 @@ Node* deleteFromEnd(Node* head) {
 
 // function to insert a new node at end
 Node* delete_node_with_value(Node* head, int target) {
-    if(head==NULL) return NULL;
+    if(!head) return NULL;
 
     // search the target node
     Node* prev= new Node;  
@@ -81,11 +81,11 @@ int main() {
 
     third->data = 30;
     third->next = nullptr;
-    cout<<"before insertion"<<endl;
+    cout<<"before deletion"<<endl;
     ll_traversal(head);
     cout<<endl;
     cout<<"after deletion"<<endl;
-    head=delete_node_with_value(head,30);
+    head=delete_node_with_value(head,20);
     ll_traversal(head);
     
     
