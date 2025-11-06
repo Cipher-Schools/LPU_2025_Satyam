@@ -1,6 +1,6 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
+
 
 class WaterBill {
 private:
@@ -26,8 +26,6 @@ public:
             bill = 10 * 5 + (*units - 10) * 8;
         else
             bill = 10 * 5 + 10 * 8 + (*units - 20) * 10;
-
-        cout << fixed << setprecision(2);
         cout << "Total Bill:" << bill;
     }
 };
