@@ -6,18 +6,25 @@ struct Node {
     Node* next;
 };
 
-bool isCycle(Node* head){
-    if(head==NULL || head->next==NULL) return false;
-    Node * hare=head;
-    Node *tortoise =head;
-
-    while(hare!=NULL && hare->next!=NULL){
-        hare= hare->next->next;
-        tortoise=tortoise->next;
-        if(hare==tortoise) return true;
+Node *detectCycle(Node *head) {
+        Node* slow=head;
+        Node* fast=head;
+        if(fast==nullptr) return nullptr;
+        else if(fast->next==nullptr) return nullptr;
+        do{
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        while(slow!=fast && fast!=nullptr && fast->next!=nullptr);
+        if(fast==nullptr) return nullptr;
+        else if(fast->next==nullptr) return nullptr;
+        slow=head;
+        while(slow!=fast){
+            slow=slow->next;
+            fast=fast->next;
+        }
+        return slow;
     }
-    return false;
-}
 
 int main() {
     Node* head = new Node();
@@ -31,9 +38,9 @@ int main() {
     second->next = third;
 
     third->data = 30;
-    third->next = nullptr;
-
-    if(isCycle(head)) cout<<"yes cycle is present"<<endl;
+    third->next = second;
+    Node* cycle_node= detectCycle(head);
+    if(cycle_node) cout<<"yes cycle is present at "<<cycle_node->data<<endl;
     else cout<<"cycle is not present";
 
     return 0;
