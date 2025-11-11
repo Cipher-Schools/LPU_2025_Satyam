@@ -1,0 +1,4 @@
+hellois a new file.
+Old content (if any) is now overwritten.
+Appended line at the end of file.
+Added text at end using ate mode.
