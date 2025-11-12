@@ -9,7 +9,6 @@ int main() {
         cout << "File not found!" << endl;
         return 0;
     }
-
     string target, word;
     cout << "Enter word to search: ";
     cin >> target;
@@ -21,7 +20,6 @@ int main() {
             break;
         }
     }
-
     if (found) cout << "Word found in file!";
     else cout << "Word not found!";
     file.close();
