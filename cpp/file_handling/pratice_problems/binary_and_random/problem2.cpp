@@ -5,7 +5,6 @@ using namespace std;
 
 struct Employee {
     int id;
-    char name[30];
     float salary;
 };
 
@@ -15,6 +14,7 @@ int main() {
         cout << "File not found!";
         return 0;
     }
+
 
     fin.seekg(0, ios::end);
     int size = fin.tellg();

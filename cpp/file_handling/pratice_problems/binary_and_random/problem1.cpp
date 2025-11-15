@@ -6,17 +6,24 @@ using namespace std;
 
 struct Employee {
     int id;
-    char name[30];
     float salary;
+
 };
 
 int main() {
     ofstream fout("employee.dat", ios::binary | ios::app);
 
-    Employee e;
-    cout<<"enter id, name and salary separated by space"<<endl;
-    cin>>e.id>>e.name>>e.salary;
-    fout.write((char*)&e, sizeof(e));
+    Employee e1;
+    Employee e2;
+    Employee e3;
+    e1.id=1; e1.salary=90000;
+    e2.id=2; e2.salary=80000;
+    e3.id=3; e3.salary=70000;
+
+    fout.write((char*)&e1, sizeof(e1));
+    fout.write((char*)&e2, sizeof(e2));
+    fout.write((char*)&e3, sizeof(e3));
+
     fout.close();
     cout << "\nRecords added successfully!";
 }
