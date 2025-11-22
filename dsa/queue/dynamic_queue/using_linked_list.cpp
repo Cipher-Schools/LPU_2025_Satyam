@@ -8,43 +8,43 @@ struct Node {
 };
 
 class QueueLL {
-    Node *front, *rear;
+    Node *head, *tail;
 public:
     QueueLL(){
-        front=rear=nullptr;
+        head=tail=nullptr;
     }
 
     // insert new node at end
     void push(int x) {
         Node* temp = new Node(x);
-        if (!rear) front = rear = temp;
+        if (!tail) head = tail = temp;
         else {
-            rear->next = temp;
-            rear = temp;
+            tail->next = temp;
+            tail = temp;
         }
         cout << x << " inserted.\n";
     }
 
     // delete at beginning
     void pop() {
-        if (!front) {
+        if (!head) {
             cout << "Queue Empty!\n";
             return;
         }
-        Node* temp = front;
+        Node* temp = head;
         cout << temp->data << " deleted.\n";
-        front = front->next;
-        if (!front) rear = nullptr;
+        head = head->next;
+        if (!head) tail = nullptr;
         delete temp;
     }
 
     // traversal of queue
     void display() {
-        if (!front) {
+        if (!head) {
             cout << "Queue Empty!\n";
             return;
         }
-        Node* temp = front;
+        Node* temp = head;
         cout << "Queue: ";
         while (temp) {
             cout << temp->data << " ";
@@ -54,11 +54,11 @@ public:
     }
 
     int peek(){
-        if (!front) {
+        if (!head) {
             cout << "Queue Empty!\n";
-            return;
+            return -1;
         }
-        return front->data;
+        return head->data;
 
     }
 };
