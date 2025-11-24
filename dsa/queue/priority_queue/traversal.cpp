@@ -11,7 +11,7 @@ void traversal(priority_queue<int> pq){
 }
 
 int main() {
-    priority_queue<int> pq;              // Max heap by default
+    priority_queue<int> pq; //max heap
     pq.push(10);
     pq.push(9);
     pq.push(11);

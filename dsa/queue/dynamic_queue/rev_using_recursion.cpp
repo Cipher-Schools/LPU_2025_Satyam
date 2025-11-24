@@ -2,7 +2,6 @@
 #include<queue>
 using namespace std;
 
-
 void traversal(queue<int> q){
     while(!q.empty()){
         cout<<q.front()<<" ";
