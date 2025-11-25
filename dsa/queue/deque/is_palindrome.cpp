@@ -2,24 +2,22 @@
 #include <queue>
 using namespace std;
 
-int main() {
+bool is_palindrome(vector<int>&arr){
+    int n=arr.size();
     deque<int> dq;
-    dq.push_front(1);
-    dq.push_front(2);
-    dq.push_front(2);
-    dq.push_front(1);
-
+    for(int i=0;i<n;i++) dq.push_front(arr[i]);
     while(dq.size()>1){
-        if(dq.front()!=dq.back()) {
-            cout<<"no"<<endl;
-            return 0;
-        }
-        else{
-            dq.pop_back();
-            dq.pop_front();
-        }
+        if(dq.front()!=dq.back()) return false;
+        dq.pop_back();
+        dq.pop_front();
     }
-    cout<<"yes";
+    return true;
+}
+
+int main() {
+    vector<int> arr={1,2,3,2,1};
+    if(is_palindrome(arr)) cout<<"yes";
+    else cout<<"no";
     return 0;
     
 }
