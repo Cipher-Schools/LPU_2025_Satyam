@@ -11,7 +11,7 @@ public:
         this->arr=arr;
     }
     // Overload [] to return sum of first x elements
-    int operator[](int x) const {
+    int operator[](int x) {
         if (x < 0 || x > arr.size())
             {
                 cout<<"invalid value of x";
@@ -26,9 +26,7 @@ public:
 };
 
 int main() {
-    vector<int> arr={1,2,3,4,5};
-    VectorSum v(arr);
-
+    VectorSum v({1,2,3,4,5});
     cout << v[3] << endl;   
     cout << v[5] << endl;   
     cout << v[0] << endl; 

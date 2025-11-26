@@ -17,6 +17,6 @@ int main() {
     Vector2D v1(3, 4);
     Vector2D v2(2, -1);
     int dot_product=v1*v2;
-    cout << dot_product << endl;  // Output: 2
+    cout << (v1 * v2) << endl;  // Output: 2
     return 0;
 }
