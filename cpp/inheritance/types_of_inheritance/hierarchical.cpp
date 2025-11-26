@@ -15,6 +15,4 @@ int main(){
     Circle c;
     r.show_sides();
     c.show_sides();
-    
-    
 }
