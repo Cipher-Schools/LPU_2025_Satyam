@@ -10,8 +10,9 @@ int pow_1(int x, int n){
 int pow_2(int x, int n){
     if(n==0) return 1;
     int half_pow=pow_2(x,n/2);
-    if(n%2==0) return half_pow*half_pow;
-    return half_pow*half_pow*x;
+    int sq=half_pow*half_pow;
+    if(n%2==0) return sq;
+    return sq*x;
 }
 
 int main(){
